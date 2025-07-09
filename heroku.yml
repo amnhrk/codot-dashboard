@@ -1,0 +1,9 @@
+build:
+  docker:
+    web: Dockerfile
+release:
+  image: web
+  command:
+    - echo "Release phase commands"
+run:
+  web: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 

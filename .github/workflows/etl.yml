@@ -1,0 +1,15 @@
+name: Daily Codot ETL
+on:
+  schedule:
+    - cron: "0 22 * * *"  # 07:00 JST
+jobs:
+  run-etl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.10" }
+      - run: pip install poetry && poetry install
+      - run: python -m lib.etl --auto $(./scripts/download_last_codot.sh)
+      - run: git add codot.db && git commit -m "auto: update db" || echo "no changes"
+      - run: git push origin HEAD:data-cache 
