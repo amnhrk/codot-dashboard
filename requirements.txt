@@ -5,4 +5,4 @@ prophet>=1.1.0
 openai>=1.0.0
 sqlite-utils>=3.34.0
 openpyxl>=3.1.0
-kaleido==0.2.1 
+kaleido==0.2.1 # Updated for ETL enhancement - Wed Jul  9 22:45:25 JST 2025
