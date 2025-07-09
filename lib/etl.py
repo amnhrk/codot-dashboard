@@ -203,13 +203,14 @@ def detect_column_mapping(df: pd.DataFrame) -> Dict[str, Optional[str]]:
                  'customer': [
              r'.*顧客.*', r'.*客数.*', r'.*customer.*', r'.*来客.*',
              r'.*customer_count.*', r'.*visitors.*', r'.*来店.*',
-             r'.*人数.*', r'.*客.*', r'.*訪問.*', r'^客数$', r'^顧客数$'
+             r'.*人数.*', r'.*客.*', r'.*訪問.*', r'^客数$', r'^顧客数$',
+             r'^[0-9]+$', r'.*件数.*', r'.*数.*'
          ],
                  'spend': [
              r'.*客単価.*', r'.*単価.*', r'.*spend.*', r'.*average.*',
              r'.*客平均.*', r'.*avg.*', r'.*一人当.*', r'.*平均単価.*',
              r'.*unit_price.*', r'.*per_customer.*', r'.*契約価.*',
-             r'.*価格.*', r'.*金額.*', r'.*料金.*'
+             r'.*価格.*', r'.*金額.*', r'.*料金.*', r'^[0-9]+～.*', r'.*円～.*'
          ],
         'sales': [
             r'.*売上.*', r'.*sales.*', r'.*revenue.*', r'.*売上金額.*',
